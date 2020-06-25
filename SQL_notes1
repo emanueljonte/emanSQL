@@ -1,0 +1,49 @@
+#Create
+CREATE TABLE table_name (
+   column_1 data_type, 
+   column_2 data_type, 
+   column_3 data_type
+);
+
+CREATE TABLE celebs(
+  id INTEGER,
+  name TEXT,
+  age INTEGER
+);
+
+
+#Insert
+INSERT INTO celebs (id, name, age) 
+VALUES (1, 'Justin Bieber', 22);
+
+
+
+*The ALTER TABLE statement adds a new column to a table.
+
+#Alter
+ALTER TABLE celebs 
+ADD COLUMN twitter_handle TEXT;
+
+
+*The UPDATE statement edits a row in a table.
+
+#Update
+UPDATE celebs 
+SET twitter_handle = '@taylorswift13' 
+WHERE id = 4; 
+
+
+
+*The DELETE FROM statement deletes one or more rows from a table.
+
+#Delete
+DELETE FROM celebs 
+WHERE twitter_handle IS NULL;
+
+*Constraints that add information about how a column can be used are invoked after specifying the data type for a column. 
+#CREATE TABLE celebs (
+   id INTEGER PRIMARY KEY, 
+   name TEXT UNIQUE,
+   date_of_birth TEXT NOT NULL,
+   date_of_death TEXT DEFAULT 'Not Applicable'
+);
